@@ -2,7 +2,7 @@
 int powx(int a,int b)
 {
     int temp=1;
-while (b>0)
+while (b>0) 
 {
    temp*=a;
    b--;
