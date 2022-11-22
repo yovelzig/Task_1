@@ -1,7 +1,7 @@
 CC=gcc
 FLAGS = -Wall -g
 ALL_M= mains maindloop maindrec
-
+ 
 all:$(ALL_M)
 
 libclassloops.a: basicClassification.o advancedClassificationLoop.o
