@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include<stdio.h> 
 int isArmstrong(int a)
 {
     int counter = 0;
