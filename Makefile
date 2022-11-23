@@ -4,17 +4,26 @@ ALL_M= mains maindloop maindrec
  
 all:$(ALL_M)
 
+loops: libclassloops.a
+
+recursives: libclassrec.a
+
+recursived: libclassrec.so
+
+loopd: libclassloops.so
+
 libclassloops.a: basicClassification.o advancedClassificationLoop.o
 	ar -rcs libclassloops.a basicClassification.o advancedClassificationLoop.o
 
 libclassrec.a: basicClassification.o advancedClassificationRecurtion.o
 	ar -rcs libclassrec.a basicClassification.o advancedClassificationRecurtion.o
 
-libclassrec.so: basicClassification.o advancedClassificationRecurtion.o
+libclassrec.so:	basicClassification.o advancedClassificationRecurtion.o
 	gcc -shared -o libclassrec.so basicClassification.o advancedClassificationRecurtion.o
 
-loopd: basicClassification.o advancedClassificationLoop.o
+libclassloops.so: basicClassification.o advancedClassificationLoop.o
 	gcc -shared -o libclassloops.so basicClassification.o advancedClassificationLoop.o
+
 
 mains: main.o libclassrec.a
 	gcc $(FLAGS) -o mains main.o libclassrec.a
@@ -30,11 +39,14 @@ main.o: main.c NumClass.h
 
 basicClassification.o: basicClassification.c
 	gcc $(FLAGS) -c basicClassification.c
-advancedClassificationRecursion.o: advancedClassificationRecursion.c
-	gcc $(FLAGS) -c advancedClassificationRecursion.c
+
+advancedClassificationRecurtion.o: advancedClassificationRecurtion.c
+	gcc $(FLAGS) -c advancedClassificationRecurtion.c
+
 advancedClassificationLoop.o: advancedClassificationLoop.c
 	gcc $(FLAGS) -c advancedClassificationLoop.c
 
 clean:
 	rm -f *.o *.a *.so $(ALL_M)
 
+.PHONY: clean 

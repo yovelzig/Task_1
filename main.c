@@ -3,11 +3,11 @@
 int printall(int a, int b)
 {
    int c = b;
-   int curr=0;
+   int curr = 0;
    printf("\nPrime numbers : ");
    while (b <= a)
    {
-      curr=isPrime(b);
+      curr = isPrime(b);
       if (curr == 1)
       {
          printf("%d ,", b);
@@ -18,7 +18,7 @@ int printall(int a, int b)
    printf("\nArmstrong numbers : ");
    while (b <= a)
    {
-      curr=isArmstrong(b);
+      curr = isArmstrong(b);
       if (curr == 1)
       {
          printf("%d ,", b);
@@ -29,7 +29,7 @@ int printall(int a, int b)
    printf("\nStrong numbers : ");
    while (b <= a)
    {
-      curr=isStrong(b);
+      curr = isStrong(b);
       if (curr == 1)
       {
          printf("%d ,", b);
@@ -40,7 +40,7 @@ int printall(int a, int b)
    printf("\nPalindrome numbers : ");
    while (b <= a)
    {
-      curr=isPalindrome(b);
+      curr = isPalindrome(b);
       if (curr == 1)
       {
          printf("%d ,", b);
