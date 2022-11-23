@@ -29,10 +29,10 @@ mains: main.o libclassrec.a
 	gcc $(FLAGS) -o mains main.o libclassrec.a
 
 maindloop: main.o libclassloops.so
-	gcc -fPIC $(FLAGS) main.o libclassloops.so -o maindloop
+	gcc -fPIC $(FLAGS) main.o ./libclassloops.so -o maindloop
 
 maindrec: main.o libclassrec.so
-	gcc -fPIC $(FLAGS) main.o libclassrec.so -o maindrec 
+	gcc -fPIC $(FLAGS) main.o ./libclassrec.so -o maindrec 
 
 main.o: main.c NumClass.h
 	gcc $(FLAGS) -c main.c
