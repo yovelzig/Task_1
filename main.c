@@ -15,7 +15,7 @@ int printall(int a, int b)
       b++;
    }
    b = c;
-   printf("\nThe Palindromes numbers are: ");
+   printf("\nThe Palindromes are: ");
    while (b <= a)
    {
       curr = isPalindrome(b);
@@ -64,6 +64,6 @@ int main()
    {
       printall(y, x);
    }
-   
+
    return 0;
 }
