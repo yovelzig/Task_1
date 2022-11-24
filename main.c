@@ -4,7 +4,7 @@ int printall(int a, int b)
 {
    int c = b;
    int curr = 0;
-   printf("The Armstrong numbers are: ");
+   printf("The Armstrong numbers are:");
    while (b <= a)
    {
       curr = isArmstrong(b);
@@ -15,7 +15,7 @@ int printall(int a, int b)
       b++;
    }
    b = c;
-   printf("\nThe Palindromes are: ");
+   printf("\nThe Palindromes are:");
    while (b <= a)
    {
       curr = isPalindrome(b);
@@ -26,7 +26,7 @@ int printall(int a, int b)
       b++;
    }
    b = c;
-   printf("\nThe Prime numbers are: ");
+   printf("\nThe Prime numbers are:");
    while (b <= a)
    {
       curr = isPrime(b);
@@ -37,7 +37,7 @@ int printall(int a, int b)
       b++;
    }
    b = c;
-   printf("\nThe Strong numbers are: ");
+   printf("\nThe Strong numbers are:");
    while (b <= a)
    {
       curr = isStrong(b);
