@@ -4,6 +4,15 @@ ALL_M= mains maindloop maindrec
  
 all:$(ALL_M)
 
+mains: main.o libclassrec.a
+	$(CC) $(FLAGS) -o mains main.o libclassrec.a
+
+maindloop: main.o libclassloops.so
+	$(CC) $(FLAGS) main.o ./libclassloops.so -o maindloop
+
+maindrec: main.o libclassrec.so
+	$(CC) $(FLAGS) main.o ./libclassrec.so -o maindrec 
+
 loops: libclassloops.a
 
 recursives: libclassrec.a
@@ -23,16 +32,6 @@ libclassrec.so:	basicClassification.o advancedClassificationRecurtion.o
 
 libclassloops.so: basicClassification.o advancedClassificationLoop.o
 	$(CC) -shared -fPIC -o libclassloops.so basicClassification.o advancedClassificationLoop.o
-
-
-mains: main.o libclassrec.a
-	$(CC) $(FLAGS) -o mains main.o libclassrec.a
-
-maindloop: main.o libclassloops.so
-	$(CC) $(FLAGS) main.o ./libclassloops.so -o maindloop
-
-maindrec: main.o libclassrec.so
-	$(CC) $(FLAGS) main.o ./libclassrec.so -o maindrec 
 
 main.o: main.c NumClass.h
 	$(CC) $(FLAGS) -c main.c
