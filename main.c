@@ -10,7 +10,7 @@ int printall(int a, int b)
       curr = isArmstrong(b);
       if (curr == 1)
       {
-         printf("%d ", b);
+         printf("%d", b);
       }
       b++;
    }
@@ -21,7 +21,7 @@ int printall(int a, int b)
       curr = isPalindrome(b);
       if (curr == 1)
       {
-         printf("%d ", b);
+         printf("%d", b);
       }
       b++;
    }
@@ -32,7 +32,7 @@ int printall(int a, int b)
       curr = isPrime(b);
       if (curr == 1)
       {
-         printf("%d ", b);
+         printf("%d", b);
       }
       b++;
    }
@@ -43,7 +43,7 @@ int printall(int a, int b)
       curr = isStrong(b);
       if (curr == 1)
       {
-         printf("%d ", b);
+         printf("%d", b);
       }
       b++;
    }
