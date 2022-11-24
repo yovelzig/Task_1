@@ -3,6 +3,7 @@ FLAGS = -Wall -g
 ALL_M= mains maindloop maindrec
  
 all:$(ALL_M)
+
 mains: main.o libclassrec.a
 	$(CC) $(FLAGS) -o mains main.o libclassrec.a
 
@@ -43,8 +44,10 @@ advancedClassificationRecurtion.o: advancedClassificationRecurtion.c
 
 advancedClassificationLoop.o: advancedClassificationLoop.c
 	$(CC) $(FLAGS) -c advancedClassificationLoop.c
+	
+.PHONY: clean
 
 clean:
 	rm -f *.o *.a *.so $(ALL_M)
 
-.PHONY: clean all
+ 
