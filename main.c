@@ -4,24 +4,34 @@ int printall(int a, int b)
 {
    int c = b;
    int curr = 0;
+     printf("\nArmstrong numbers : ");
+   while (b <= a)
+   {
+      curr = isArmstrong(b);
+      if (curr == 1)
+      {
+         printf("%d ", b);
+      }
+      b++;
+   }
+   b = c;
+     printf("\nPalindrome numbers : ");
+   while (b <= a)
+   {
+      curr = isPalindrome(b);
+      if (curr == 1)
+      {
+         printf("%d ", b);
+      }
+      b++;
+   }
    printf("\nPrime numbers : ");
    while (b <= a)
    {
       curr = isPrime(b);
       if (curr == 1)
       {
-         printf("%d ,", b);
-      }
-      b++;
-   }
-   b = c;
-   printf("\nArmstrong numbers : ");
-   while (b <= a)
-   {
-      curr = isArmstrong(b);
-      if (curr == 1)
-      {
-         printf("%d ,", b);
+         printf("%d ", b);
       }
       b++;
    }
@@ -32,21 +42,11 @@ int printall(int a, int b)
       curr = isStrong(b);
       if (curr == 1)
       {
-         printf("%d ,", b);
+         printf("%d ", b);
       }
       b++;
    }
    b = c;
-   printf("\nPalindrome numbers : ");
-   while (b <= a)
-   {
-      curr = isPalindrome(b);
-      if (curr == 1)
-      {
-         printf("%d ,", b);
-      }
-      b++;
-   }
    printf("\n");
    return 0;
 }
@@ -54,9 +54,7 @@ int printall(int a, int b)
 int main()
 {
    int x, y;
-   printf("Enter the first number : \n");
    scanf("%d", &x);
-   printf("Enter the second number : \n");
    scanf("%d", &y);
    if (y < x)
    {
