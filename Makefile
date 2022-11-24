@@ -3,14 +3,13 @@ FLAGS = -Wall -g
 ALL_M= mains maindloop maindrec
  
 all:$(ALL_M)
-
-mains: main.o loops
+mains: main.o libclassrec.a
 	$(CC) $(FLAGS) -o mains main.o libclassrec.a
 
-maindloop: main.o loopd
+maindloop: main.o libclassloops.so
 	$(CC) $(FLAGS) main.o ./libclassloops.so -o maindloop
 
-maindrec: main.o recursived
+maindrec: main.o libclassrec.so
 	$(CC) $(FLAGS) main.o ./libclassrec.so -o maindrec 
 
 loops: libclassloops.a
@@ -48,4 +47,4 @@ advancedClassificationLoop.o: advancedClassificationLoop.c
 clean:
 	rm -f *.o *.a *.so $(ALL_M)
 
-.PHONY: clean all loopd loops recursived recursives
+.PHONY: clean all
