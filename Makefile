@@ -1,6 +1,6 @@
 CC=gcc
 FLAGS = -Wall -g
-ALL_M= mains maindloop maindrec
+ALL_M= mains maindloop maindrec loopd loops recursived recursives
  
 all:$(ALL_M)
 
@@ -44,7 +44,7 @@ advancedClassificationRecurtion.o: advancedClassificationRecurtion.c
 
 advancedClassificationLoop.o: advancedClassificationLoop.c
 	$(CC) $(FLAGS) -c advancedClassificationLoop.c
-	
+
 .PHONY: clean
 
 clean:
