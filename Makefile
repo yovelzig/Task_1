@@ -4,13 +4,13 @@ ALL_M= mains maindloop maindrec
  
 all:$(ALL_M)
 
-mains: main.o libclassrec.a
+mains: main.o loops
 	$(CC) $(FLAGS) -o mains main.o libclassrec.a
 
-maindloop: main.o libclassloops.so
+maindloop: main.o loopd
 	$(CC) $(FLAGS) main.o ./libclassloops.so -o maindloop
 
-maindrec: main.o libclassrec.so
+maindrec: main.o recursived
 	$(CC) $(FLAGS) main.o ./libclassrec.so -o maindrec 
 
 loops: libclassloops.a
@@ -48,4 +48,4 @@ advancedClassificationLoop.o: advancedClassificationLoop.c
 clean:
 	rm -f *.o *.a *.so $(ALL_M)
 
-.PHONY: clean all
+.PHONY: clean all loopd loops recursived recursives
