@@ -19,20 +19,20 @@ libclassrec.a: basicClassification.o advancedClassificationRecurtion.o
 	ar -rcs libclassrec.a basicClassification.o advancedClassificationRecurtion.o
 
 libclassrec.so:	basicClassification.o advancedClassificationRecurtion.o
-	$(CC) -shared -o libclassrec.so basicClassification.o advancedClassificationRecurtion.o
+	$(CC) -shared -fPIC -o libclassrec.so basicClassification.o advancedClassificationRecurtion.o
 
 libclassloops.so: basicClassification.o advancedClassificationLoop.o
-	$(CC) -shared -o libclassloops.so basicClassification.o advancedClassificationLoop.o
+	$(CC) -shared -fPIC -o libclassloops.so basicClassification.o advancedClassificationLoop.o
 
 
 mains: main.o libclassrec.a
 	$(CC) $(FLAGS) -o mains main.o libclassrec.a
 
 maindloop: main.o libclassloops.so
-	$(CC) -fPIC $(FLAGS) main.o ./libclassloops.so -o maindloop
+	$(CC) $(FLAGS) main.o ./libclassloops.so -o maindloop
 
 maindrec: main.o libclassrec.so
-	$(CC) -fPIC $(FLAGS) main.o ./libclassrec.so -o maindrec 
+	$(CC) $(FLAGS) main.o ./libclassrec.so -o maindrec 
 
 main.o: main.c NumClass.h
 	$(CC) $(FLAGS) -c main.c
